@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cf85baeb-78c8-41ae-849c-0ce8772663fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailingi/mailingi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/mailingi/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/zestawienie_kampanii.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/zestawienie_kampanii.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +46,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614845728095</updated>
-      <workItem from="1614845729324" duration="4424000" />
+      <workItem from="1614845729324" duration="6978000" />
     </task>
     <servers />
   </component>

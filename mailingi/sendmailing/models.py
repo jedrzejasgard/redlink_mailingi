@@ -19,6 +19,15 @@ class KampaniaRedlink(models.Model):
     open_rate_de = models.FloatField(default=0)
     ctr_fr = models.FloatField(default=0)
     open_rate_fr = models.FloatField(default=0)
+    dostarczone_wiadomoscidostarczone_wiadomosci_pl = models.IntegerField(default=0)
+    dostarczone_wiadomoscidostarczone_wiadomosci_en = models.IntegerField(default=0)
+    dostarczone_wiadomoscidostarczone_wiadomosci_de = models.IntegerField(default=0)
+    dostarczone_wiadomoscidostarczone_wiadomosci_fr = models.IntegerField(default=0)
+    un_sub_pl = models.IntegerField(default=0)
+    un_sub_en = models.IntegerField(default=0)
+    un_sub_de = models.IntegerField(default=0)
+    un_sub_fr = models.IntegerField(default=0)
+
 
     def __str__(self):
         return self.nazwa_kampanii
