@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Detale kampanii</title>
+  </head>
+  <body>
+    <div class="container">
+      {% for item in szczegoly %}
+      <h1>Detale kampanii</h1>
+      <p><strong>Temat:</strong> {{item.temat_mailingu_pl}}</p>
+      <p><strong>Data wysyłki:</strong> {{item.kiedy_wyslany}}</p>
+      <p><strong>Link do mailingu: </strong><a href="https:{{item.link_content}}_pl.html" target="_blank">https:{{item.link_content}}_pl.html</a></p>
+      <h3>Statystyki</h3>
+      <p>Przez pierwszych kilka godzin od wysyłki danych nie ma w API dlatego wyświetlane są wartości 'blad'</p>
+      {% for key,values in dict_mailingi_szczegoly.items %}
+                 
+            {% if key == item.redlink_id_a_sitek_pl %}
+            <a class="btn btn-primary btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_a_sitek_pl}} role="button"target="_blank">Agnieszka Sitek PL 
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+          
+        
+          {% if key == item.redlink_id_c_idziak_pl %}
+          <a class="btn btn-primary btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_c_idziak_pl}} role="button"target="_blank">Cezary Idziak PL
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_i_rosinska_pl %}
+          <a class="btn btn-primary btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_i_rosinska_pl}} role="button"target="_blank">Iwona Rosińska PL
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_m_mikolajczyk_pl %}
+          <a class="btn btn-primary btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_m_mikolajczyk_pl}} role="button"target="_blank">Magdalena Mikolajczyk PL
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_m_kluszczynska_pl %}
+          <a class="btn btn-primary btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_m_kluszczynska_pl}} role="button"target="_blank">Marlena Kluszczyńska PL
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_t_piszczola_pl %}
+          <a class="btn btn-primary btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_t_piszczola_pl}} role="button"target="_blank">Tomasz Piszczola PL
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_a_biegajlo_en %}
+          <a class="btn btn-success btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_a_biegajlo_en}} role="button"target="_blank">Aleksandra Muszyńska EN
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_j_nieglos_en %}
+          <a class="btn btn-success btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_j_nieglos_en}} role="button"target="_blank">Jakub Niegłos EN
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_l_urbanczyk_en %}
+          <a class="btn btn-success btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_l_urbanczyk_en}} role="button"target="_blank">Łukasz Urbańczyk EN
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_m_prange_en %}
+          <a class="btn btn-success btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_m_prange_en}} role="button"target="_blank">Marianna Prange EN
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_m_bujakowska_en %}
+          <a class="btn btn-success btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_m_bujakowska_en}} role="button"target="_blank">Monika Bujakowska EN
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_p_strzelecki_en %}
+          <a class="btn btn-success btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_p_strzelecki_en}} role="button"target="_blank">Paweł Strzelecki EN
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_m_sobaszek_en %}
+          <a class="btn btn-success btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_m_sobaszek_en}} role="button"target="_blank">Magdalena Sobaszek EN
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_l_urbanczyk_de %}
+          <a class="btn btn-warning btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_l_urbanczyk_de}} role="button"target="_blank">Łukasz Urbańczyk DE
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_m_prange_de %}
+          <a class="btn btn-warning btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_m_prange_de}} role="button"target="_blank">Marianna Prange DE
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_m_bujakowska_de %}
+          <a class="btn btn-warning btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_m_bujakowska_de}} role="button"target="_blank">Monika Bujakowska DE
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_a_biegajlo_fr %}
+          <a class="btn btn-info btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_a_biegajlo_fr}} role="button"target="_blank">Aleksandra Muszyńska FR
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        
+          {% if key == item.redlink_id_m_prange_fr %}
+          <a class="btn btn-info btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{item.redlink_id_m_prange_fr}} role="button"target="_blank">Marianna Prange FR
+              <p>CTR: {{values.0}}% OR: {{values.1}}% Dostarczone: {{values.2}} Wypisali się: {{values.3}}</p></a>
+            {%endif%}
+        {% endfor %}
+    {% endfor%}
+    <br>
+    <div class="form-row">
+      <div class="form-group col-md-12 srodek_button">
+        <a class="btn btn-danger" href="http://127.0.0.1:8000/zestawienie_kampanii/" role="button">Sprawdź statystyki wcześniejszych mailingów</a>
+      </div>
+    </div>
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

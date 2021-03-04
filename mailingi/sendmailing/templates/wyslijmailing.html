@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Auto Mailing</title>
+    <style>
+      form{
+        width: 100%;
+      }
+      body{
+        padding-top: 2em;
+        padding-bottom: 2em;
+      }
+      .srodek_button{
+        text-align: center;
+      }
+      p{
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Dodaj nowy mailing wysłany przez strone Redlink</h1>
+        <div class="row align-items-center">
+        <form id='mailingForm' action = '#'>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="nazwa_mailingu">Nazwa kampanii</label>
+              <input type="tekst" class="form-control" id="nazwa_mailingu"name="nazwa_mailingu" value = {{dane.nazwa_mailingu}} >
+            </div>
+          </div>
+          <hr>
+          <h5>Jeśli nie wpiszesz tematu mailingu dany język nie zostanie wysłany</h5>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="temat_PL">Temat PL</label>
+              <input type="tekst" class="form-control" id="temat_PL"name="temat_PL"value = {{dane.temat_PL}}>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="temat_EN">Temat EN</label>
+              <input type="tekst" class="form-control" id="temat_EN"name="temat_EN"value = {{dane.temat_EN}}>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="temat_DE">Temat DE</label>
+              <input type="tekst" class="form-control" id="temat_DE"name="temat_DE"value = {{dane.temat_DE}}>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="temat_FR">Temat FR</label>
+              <input type="tekst" class="form-control" id="temat_FR"name="temat_FR"value = {{dane.temat_FR}}>
+            </div>
+          </div>
+          <hr>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="adres_strony_mailingu">Link do zawartości mailingu(zawierający  '/redlink_')</label>
+              <input type="tekst" class="form-control" id="adres_strony_mailingu"name="adres_strony_mailingu"value = '{{dane.adres_strony_mailingu}}'>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12 srodek_button">
+              <button type="button" class="btn btn-warning" data-toggle="modal" data-target='#popupWysylkaTest'>Wyślij Test</button>
+              <p>Testowy mailingu jest  wysyłany natychmiast bez ustrawiania daty wysyłki</p>
+            </div>
+          </div>
+          <hr>
+          <div class="form-row">
+            <div class="form-group col-md-3"></div>
+            <div class="form-group col-md-6">
+              <label for="data_wysylki_input">Data wysyłki (date / godzina):</label>
+              <input type="datetime-local" id="data_wysylki_input" name="data_wysylki_input">
+            </div>
+            <div class="form-group col-md-3"></div>
+          </div>
+          <hr>
+          <div class="form-row">
+            <div class="form-group col-md-12 srodek_button">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target='#popupWysylka'>Wyślij mailing</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="form-row">
+            <div class="form-group col-md-12 srodek_button">
+              <a class="btn btn-danger" href="http://127.0.0.1:8000/zestawienie_kampanii/" role="button">Sprawdź statystyki wcześniejszych mailingów</a>
+            </div>
+          </div>
+      <div class="modal fade" id="popupWysylkaTest" tabindex="-1" role="dialog" aria-labelledby="popupWysylkaTestTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="popupWysylkaTestTitle">Wysyłasz test mailingu na adresy</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              (l.rymarczuk , marketing , j.pawlewski) @asgard.gifts
+              <p>W temacie mailingu spacja zostanie zamieniona na '_' ale przy wysyłce ponownie zostanie zamieniona na spację</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Pomyłka</button>
+              <button type="button" id='submitTest' class="btn btn-success">Tak wyślij</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="popupWysylka" tabindex="-1" role="dialog" aria-labelledby="popupWysylkaTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="popupWysylkaTitle">Wysyłasz mailingu na WSZYSTKIE adresy</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Wszystko sprawdzone i można wysyłać do wszystkich klientów z bazy?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Pomyłka</button>
+              <button type="button" id='wyslijMailing' class="btn btn-success">Tak wyślij</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form name='formMailingTest' method = 'POST' action="http://127.0.0.1:8000/wyslij_test/">
+        {% csrf_token %}
+        <input type="hidden" name = 'formMailingTest' id="formMailingTest" value>
+      </form>
+      <form name='formMailing' method = 'POST' action="http://127.0.0.1:8000/wyslij_mailing/">
+        {% csrf_token %}
+        <input type="hidden" name = 'formMailing' id="formMailing" value>
+      </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script>
+      $('#submitTest').click(function(){
+        var dictMailingTest = {}
+        dictMailingTest['nazwa_mailingu'] = $('#nazwa_mailingu').val()
+        dictMailingTest['temat_PL'] = $('#temat_PL').val()
+        dictMailingTest['temat_EN'] = $('#temat_EN').val()
+        dictMailingTest['temat_DE'] = $('#temat_DE').val()
+        dictMailingTest['temat_FR'] = $('#temat_FR').val()
+        dictMailingTest['adres_strony_mailingu'] = $('#adres_strony_mailingu').val()
+        var data_wyslania = $('#data_wysylki_input').val().replace('T','-').replace(':','-')+('-00')
+        dictMailingTest['data_wysylki_input'] = data_wyslania
+        $('#popupWysylkaTest').modal('hide');
+
+        var JsonDict = JSON.stringify(dictMailingTest);
+        if(JsonDict.length > 2){
+          $('#formMailingTest').val(JsonDict);       
+          $("form[name='formMailingTest']").submit(); 
+        }else{
+          alert('Problem')
+        }       
+      });
+
+      $('#wyslijMailing').click(function(){
+     /* when the submit button in the modal is clicked, submit the form */
+        var dictMailingTest = {}
+        dictMailingTest['nazwa_mailingu'] = $('#nazwa_mailingu').val()
+        dictMailingTest['temat_PL'] = $('#temat_PL').val()
+        dictMailingTest['temat_EN'] = $('#temat_EN').val()
+        dictMailingTest['temat_DE'] = $('#temat_DE').val()
+        dictMailingTest['temat_FR'] = $('#temat_FR').val()
+        dictMailingTest['adres_strony_mailingu'] = $('#adres_strony_mailingu').val()
+        var data_wyslania = $('#data_wysylki_input').val().replace('T','-').replace(':','-')+('-00')
+        dictMailingTest['data_wysylki_input'] = data_wyslania
+        $('#popupWysylka').modal('hide');
+
+        var JsonDict = JSON.stringify(dictMailingTest);
+        if(JsonDict.length > 2){
+          $('#formMailing').val(JsonDict);       
+          $("form[name='formMailing']").submit(); 
+        }else{
+          alert('Problem')
+        }       
+      });
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
