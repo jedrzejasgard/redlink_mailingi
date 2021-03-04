@@ -40,7 +40,8 @@ class Handlowiec (models.Model):
     open_rate = models.FloatField(default=0)
     dostarczone_wiadomosci = models.IntegerField(default=0)
     un_sub = models.IntegerField(default=0)
-    kampania_id = models.ForeignKey(KampaniaRedlink, on_delete=models.CASCADE)
+    nazwa_kampanii = models.CharField(max_length=100, default='test')
+    imie_nazwisko = models.CharField(max_length=100, default='test')
 
     def __str__(self):
-        return self.kampania_id
+        return self.nazwa_kampanii
