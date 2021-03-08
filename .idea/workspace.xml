@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cf85baeb-78c8-41ae-849c-0ce8772663fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailingi/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +30,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../BAZA TESTOWA - WGRYWANIE WD/baza mail/strona_WWW_mailing" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -45,6 +42,9 @@
       <option name="presentableId" value="Default" />
       <updated>1614845728095</updated>
       <workItem from="1614845729324" duration="15384000" />
+      <workItem from="1614893224809" duration="595000" />
+      <workItem from="1615017018077" duration="11000" />
+      <workItem from="1615184716901" duration="2358000" />
     </task>
     <servers />
   </component>
@@ -61,5 +61,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

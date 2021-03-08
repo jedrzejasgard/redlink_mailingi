@@ -32,6 +32,85 @@ def zestawienie_kampanii(request):
     return render(request, 'zestawienie_kampanii.html', {'kampanie': kampanie_model})
 
 
+def szczegoly_kampanii_redlink(id_kampanii, data_wyslania):
+    try:
+        redlink_kampania = zeep.Client('https://redlink.pl/ws/v1/Soap/MailCampaigns/MailCampaigns.asmx?WSDL')
+        client = zeep.Client('https://redlink.pl/ws/v1/Soap/Contacts/Groups.asmx?WSDL')
+        response_bounce = redlink_kampania.service.GetMailCampaignBouncesReport(strUserName=usr,
+                                                                                strPassword=passw,
+                                                                                strCampaignId=id_kampanii,
+                                                                                dateFrom=str(data_wyslania),
+                                                                                dateTo=str(datetime.date.today()),
+                                                                                offset=0,
+                                                                                limit=10000)
+        response_ctr = redlink_kampania.service.GetMailCampaignCtrReport(strUserName=usr,
+                                                                         strPassword=passw,
+                                                                         strCampaignId=id_kampanii,
+                                                                         dateFrom=str(data_wyslania),
+                                                                         dateTo=str(datetime.date.today()),
+                                                                         offset=0,
+                                                                         limit=10000)
+        response_data = redlink_kampania.service.GetMailCampaignData(strUserName=usr,
+                                                                     strPassword=passw,
+                                                                     strCampaignId=id_kampanii)
+        response_or = redlink_kampania.service.GetMailCampaignOrReport(strUserName=usr,
+                                                                       strPassword=passw,
+                                                                       strCampaignId=id_kampanii,
+                                                                       dateFrom=str(data_wyslania),
+                                                                       dateTo=str(datetime.date.today()),
+                                                                       offset=0,
+                                                                       limit=10000)
+        response_unsub = redlink_kampania.service.GetMailCampaignUnregistrationsReport(strUserName=usr,
+                                                                                       strPassword=passw,
+                                                                                       strCampaignId=id_kampanii,
+                                                                                       dateFrom=str(data_wyslania),
+                                                                                       dateTo=str(datetime.date.today()),
+                                                                                       offset=0,
+                                                                                       limit=10000 )
+        r_json_bounce = zeep.helpers.serialize_object(response_bounce)
+        r_json_ctr = zeep.helpers.serialize_object(response_ctr)
+        r_json_data = zeep.helpers.serialize_object(response_data)
+        r_json_or = zeep.helpers.serialize_object(response_or)
+        group_id = r_json_data['Data']['GroupId']
+        response_group_count = client.service.GetGroupContactsCount(strUserName=usr,
+                                                                    strPassword=passw,
+                                                                    strGroupId=group_id)
+        r_json_groupcount = zeep.helpers.serialize_object(response_group_count)
+        r_json_unsub = zeep.helpers.serialize_object(response_unsub)
+        try:
+            un_sub = len(r_json_unsub['Results'])
+        except:
+            un_sub = 0
+        clicks = 0
+        for item in r_json_ctr['Results']['MailCampaignCtrData']:
+            clicks += int(item['Count'])
+        bounces = len(r_json_bounce['Results']['MailCampaignBounceData'])
+        otwarte_maile = len(r_json_or['Results']['MailCampaignOrData'])
+        dostarczone_wiadomosci = int(r_json_groupcount['Data']) - int(bounces)
+        ctr = round(clicks*100/dostarczone_wiadomosci, 2)
+        open_rate = round(otwarte_maile*100/dostarczone_wiadomosci, 2)
+        dane = [ctr, open_rate, dostarczone_wiadomosci, un_sub]
+    except:
+        dane = ['blad', 'blad', 'blad', 'blad']
+    return dane
+
+
+def detale_kampanii(request):
+    if request.method == "POST":
+        id_kampanii = (request.POST['form_id_kampanii'])
+        kampanie_model = KampaniaRedlink.objects.filter(id=str(id_kampanii)).values()
+        mailing_dane = {}
+        for kampania in kampanie_model:
+            data_wyslania = str(kampania['kiedy_wyslany'].split(' ')[0])
+            for item in kampania:
+                item2 = item.split('_')
+                if item2[0] == 'redlink':
+                    id_redlink = kampania[item]
+                    mailing_dane[id_redlink] = (szczegoly_kampanii_redlink(id_redlink, data_wyslania))
+    return render(request, 'detale_kampanii.html', {'szczegoly': kampanie_model,
+                                                    'dict_mailingi_szczegoly': mailing_dane})
+
+
 def wyslij_test(request):
     if request.method == "POST":
         dane_mailing_post = request.POST['formMailingTest']
