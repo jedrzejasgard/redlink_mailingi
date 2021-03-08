@@ -23,10 +23,14 @@
       {% for kompania in kampanie reversed %}
       <button type="button" id = {{kompania.id}} class="btn btn-info btn-lg btn-block"><p>Nazwa: {{kompania.nazwa_kampanii}} Data wysłania: {{kompania.kiedy_wyslany}}</p>
         <p>Temat mailingu: {{kompania.temat_mailingu_pl}}</p>
-        <p>PL:  CTR: {{kompania.ctr_pl}}%  OR: {{kompania.open_rate_pl}}%  Wysłanych: {{kompania.open_rate_pl}}  Wypisało się: {{kompania.open_rate_pl}} </p>
-        <p>EN:  CTR: {{kompania.ctr_en}}%  OR: {{kompania.open_rate_en}}%  Wysłanych: {{kompania.open_rate_en}}  Wypisało się: {{kompania.open_rate_en}} </p>
-        <p>DE:  CTR: {{kompania.ctr_de}}%  OR: {{kompania.open_rate_de}}%  Wysłanych: {{kompania.open_rate_de}}  Wypisało się: {{kompania.open_rate_de}} </p>
-        <p>FR:  CTR: {{kompania.ctr_fr}}%  OR: {{kompania.open_rate_fr}}%  Wysłanych: {{kompania.open_rate_fr}}  Wypisało się: {{kompania.open_rate_fr}} </p>
+        <p>PL:  CTR: {{kompania.ctr_pl}}%  OR: {{kompania.open_rate_pl}}%
+          Wysłanych: {{kompania.dostarczone_wiadomosci_pl}}  Wypisało się: {{kompania.un_sub_pl}} </p>
+        <p>EN:  CTR: {{kompania.ctr_en}}%  OR: {{kompania.open_rate_en}}%
+          Wysłanych: {{kompania.dostarczone_wiadomosci_en}}  Wypisało się: {{kompania.un_sub_en}} </p>
+        <p>DE:  CTR: {{kompania.ctr_de}}%  OR: {{kompania.open_rate_de}}%
+          Wysłanych: {{kompania.dostarczone_wiadomosci_de}}  Wypisało się: {{kompania.un_sub_de}} </p>
+        <p>FR:  CTR: {{kompania.ctr_fr}}%  OR: {{kompania.open_rate_fr}}%
+          Wysłanych: {{kompania.dostarczone_wiadomosci_fr}}  Wypisało się: {{kompania.un_sub_fr}} </p>
       </button>
       {%endfor%}
       <form name='form_id_kampanii' method = 'POST' action="http://127.0.0.1:8000/detale_kampanii/">

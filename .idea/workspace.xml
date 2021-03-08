@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf85baeb-78c8-41ae-849c-0ce8772663fe" name="Default Changelist" comment="">
+    <list default="true" id="cf85baeb-78c8-41ae-849c-0ce8772663fe" name="Default Changelist" comment="Add szczegoly kompani 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/detale_kampanii.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/detale_kampanii.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/zestawienie_kampanii.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/zestawienie_kampanii.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +49,16 @@
       <workItem from="1614845729324" duration="15384000" />
       <workItem from="1614893224809" duration="595000" />
       <workItem from="1615017018077" duration="11000" />
-      <workItem from="1615184716901" duration="2358000" />
+      <workItem from="1615184716901" duration="15051000" />
     </task>
+    <task id="LOCAL-00001" summary="Add szczegoly kompani 1">
+      <created>1615197926146</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615197926146</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -62,5 +75,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add szczegoly kompani 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add szczegoly kompani 1" />
   </component>
 </project>
