@@ -37,6 +37,12 @@
               <input type="tekst" class="form-control" id="nazwa_mailingu"name="nazwa_mailingu" value = {{dane.nazwa_mailingu}} >
             </div>
           </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label>Wysyłka TYLKO do klientów VIP?
+              <input type="checkbox" id="czy_vip" name="czy_vip"></label>
+            </div>
+          </div>
           <hr>
           <h5>Jeśli nie wpiszesz tematu mailingu dany język nie zostanie wysłany</h5>
           <div class="form-row">
@@ -173,18 +179,19 @@
 
       $('#wyslijMailing').click(function(){
      /* when the submit button in the modal is clicked, submit the form */
-        var dictMailingTest = {}
-        dictMailingTest['nazwa_mailingu'] = $('#nazwa_mailingu').val()
-        dictMailingTest['temat_PL'] = $('#temat_PL').val()
-        dictMailingTest['temat_EN'] = $('#temat_EN').val()
-        dictMailingTest['temat_DE'] = $('#temat_DE').val()
-        dictMailingTest['temat_FR'] = $('#temat_FR').val()
-        dictMailingTest['adres_strony_mailingu'] = $('#adres_strony_mailingu').val()
+        var dictMailing = {}
+        dictMailing['nazwa_mailingu'] = $('#nazwa_mailingu').val()
+        dictMailing['czy_vip'] = $('#czy_vip').val()
+        dictMailing['temat_PL'] = $('#temat_PL').val()
+        dictMailing['temat_EN'] = $('#temat_EN').val()
+        dictMailing['temat_DE'] = $('#temat_DE').val()
+        dictMailing['temat_FR'] = $('#temat_FR').val()
+        dictMailing['adres_strony_mailingu'] = $('#adres_strony_mailingu').val()
         var data_wyslania = $('#data_wysylki_input').val().replace('T','-').replace(':','-')+('-00')
-        dictMailingTest['data_wysylki_input'] = data_wyslania
+        dictMailing['data_wysylki_input'] = data_wyslania
         $('#popupWysylka').modal('hide');
 
-        var JsonDict = JSON.stringify(dictMailingTest);
+        var JsonDict = JSON.stringify(dictMailing);
         if(JsonDict.length > 2){
           $('#formMailing').val(JsonDict);       
           $("form[name='formMailing']").submit(); 

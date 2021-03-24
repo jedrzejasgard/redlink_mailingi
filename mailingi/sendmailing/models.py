@@ -27,7 +27,10 @@ class KampaniaRedlink(models.Model):
     un_sub_en = models.IntegerField(default=0)
     un_sub_de = models.IntegerField(default=0)
     un_sub_fr = models.IntegerField(default=0)
-
+    hard_bounces_pl = models.IntegerField(default=0)
+    hard_bounces_en = models.IntegerField(default=0)
+    hard_bounces_de = models.IntegerField(default=0)
+    hard_bounces_fr = models.IntegerField(default=0)
 
     def __str__(self):
         return self.nazwa_kampanii
@@ -42,6 +45,7 @@ class Handlowiec (models.Model):
     un_sub = models.IntegerField(default=0)
     nazwa_kampanii = models.CharField(max_length=100, default='test')
     imie_nazwisko = models.CharField(max_length=100, default='test')
+    hard_bounces = models.IntegerField(default=0)
 
     def __str__(self):
         return self.nazwa_kampanii

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf85baeb-78c8-41ae-849c-0ce8772663fe" name="Default Changelist" comment="Add szczegoly kompani 1">
+    <list default="true" id="cf85baeb-78c8-41ae-849c-0ce8772663fe" name="Default Changelist" comment="Add ogolne dane o kampanii">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/detale_kampanii.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/detale_kampanii.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/wyslijmailing.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/wyslijmailing.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/zestawienie_kampanii.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/zestawienie_kampanii.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/views.py" afterDir="false" />
@@ -35,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../BAZA TESTOWA - WGRYWANIE WD/baza mail/strona_WWW_mailing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -49,7 +50,17 @@
       <workItem from="1614845729324" duration="15384000" />
       <workItem from="1614893224809" duration="595000" />
       <workItem from="1615017018077" duration="11000" />
-      <workItem from="1615184716901" duration="15051000" />
+      <workItem from="1615184716901" duration="16610000" />
+      <workItem from="1615359859659" duration="1370000" />
+      <workItem from="1615444699540" duration="6983000" />
+      <workItem from="1615746313054" duration="8252000" />
+      <workItem from="1615874441429" duration="1772000" />
+      <workItem from="1615878805760" duration="4712000" />
+      <workItem from="1615966062648" duration="3485000" />
+      <workItem from="1616065789480" duration="285000" />
+      <workItem from="1616151912519" duration="5293000" />
+      <workItem from="1616229836393" duration="1485000" />
+      <workItem from="1616485564327" duration="3033000" />
     </task>
     <task id="LOCAL-00001" summary="Add szczegoly kompani 1">
       <created>1615197926146</created>
@@ -58,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615197926146</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add ogolne dane o kampanii">
+      <created>1615211143926</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615211143926</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,6 +96,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add szczegoly kompani 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add szczegoly kompani 1" />
+    <MESSAGE value="Add ogolne dane o kampanii" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ogolne dane o kampanii" />
   </component>
 </project>
