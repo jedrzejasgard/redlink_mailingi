@@ -19,6 +19,18 @@ class KampaniaRedlink(models.Model):
     open_rate_de = models.FloatField(default=0)
     ctr_fr = models.FloatField(default=0)
     open_rate_fr = models.FloatField(default=0)
+    dostarczone_wiadomosci_pl = models.IntegerField(default=0)
+    dostarczone_wiadomosci_en = models.IntegerField(default=0)
+    dostarczone_wiadomosci_de = models.IntegerField(default=0)
+    dostarczone_wiadomosci_fr = models.IntegerField(default=0)
+    un_sub_pl = models.IntegerField(default=0)
+    un_sub_en = models.IntegerField(default=0)
+    un_sub_de = models.IntegerField(default=0)
+    un_sub_fr = models.IntegerField(default=0)
+    hard_bounces_pl = models.IntegerField(default=0)
+    hard_bounces_en = models.IntegerField(default=0)
+    hard_bounces_de = models.IntegerField(default=0)
+    hard_bounces_fr = models.IntegerField(default=0)
 
     def __str__(self):
         return self.nazwa_kampanii
@@ -31,7 +43,9 @@ class Handlowiec (models.Model):
     open_rate = models.FloatField(default=0)
     dostarczone_wiadomosci = models.IntegerField(default=0)
     un_sub = models.IntegerField(default=0)
-    kampania_id = models.ForeignKey(KampaniaRedlink, on_delete=models.CASCADE)
+    nazwa_kampanii = models.CharField(max_length=100, default='test')
+    imie_nazwisko = models.CharField(max_length=100, default='test')
+    hard_bounces = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.kampania_id
+        return self.nazwa_kampanii

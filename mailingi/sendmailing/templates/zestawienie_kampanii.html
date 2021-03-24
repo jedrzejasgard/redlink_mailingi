@@ -21,13 +21,31 @@
             </div>
       </div>
       {% for kompania in kampanie reversed %}
-      <button type="button" id = {{kompania.id}} class="btn btn-info btn-lg btn-block"><p>Nazwa: {{kompania.nazwa_kampanii}} Data wysłania: {{kompania.kiedy_wyslany}}</p>
+      <div type="button" id = {{kompania.id}} class="btn btn-info btn-lg btn-block"><p>Nazwa: {{kompania.nazwa_kampanii}} Data wysłania: {{kompania.kiedy_wyslany}}</p>
         <p>Temat mailingu: {{kompania.temat_mailingu_pl}}</p>
-      </button>
+        <p>PL:  CTR: {{kompania.ctr_pl}}%  OR: {{kompania.open_rate_pl}}%
+          Wysłanych: {{kompania.dostarczone_wiadomosci_pl}}  Wypisało się: {{kompania.un_sub_pl}}
+          HB: {{kompania.hard_bounces_pl}}</p>
+        <p>EN:  CTR: {{kompania.ctr_en}}%  OR: {{kompania.open_rate_en}}%
+          Wysłanych: {{kompania.dostarczone_wiadomosci_en}}  Wypisało się: {{kompania.un_sub_en}}
+          HB: {{kompania.hard_bounces_en}}</p>
+        <p>DE:  CTR: {{kompania.ctr_de}}%  OR: {{kompania.open_rate_de}}%
+          Wysłanych: {{kompania.dostarczone_wiadomosci_de}}  Wypisało się: {{kompania.un_sub_de}}
+          HB: {{kompania.hard_bounces_de}}</p>
+        <p>FR:  CTR: {{kompania.ctr_fr}}%  OR: {{kompania.open_rate_fr}}%
+          Wysłanych: {{kompania.dostarczone_wiadomosci_fr}}  Wypisało się: {{kompania.un_sub_fr}}
+          HB: {{kompania.hard_bounces_fr}}</p>
+        <button class = 'detale' id="detale_{{kompania.id}}" >Pokaż detale</button>
+        <button class = 'generuj' id = "generuj_{{kompania.id}}">Wygeneruj zestawienie</button>
+      </div>
       {%endfor%}
-      <form name='form_id_kampanii' method = 'POST' action="http://127.0.0.1:8000/detale_kampanii/">
+      <form name='form_id_kampanii_detale' method = 'POST' action="http://127.0.0.1:8000/detale_kampanii/">
         {% csrf_token %}
-        <input type="hidden" name = 'form_id_kampanii' id="form_id_kampanii" value>
+        <input type="hidden" name = 'form_id_kampanii_detale' id="form_id_kampanii_detale" >
+      </form>
+      <form name='form_id_kampanii_generuj' method = 'POST' action="http://127.0.0.1:8000/generuj_stats/">
+        {% csrf_token %}
+        <input type="hidden" name = 'form_id_kampanii_generuj' id="form_id_kampanii_generuj" >
       </form>
       
     </div>
@@ -36,10 +54,17 @@
     <!-- Optional JavaScript -->
     <script>
       $(document).ready(function() {
-        jQuery('button').click(function() { 
-          var id = $(this).attr('id');
-          $('#form_id_kampanii').val(id)
-          $("form[name='form_id_kampanii']").submit();
+        $('.detale').click(function() {
+          const id = $(this).attr('id');
+          $('#form_id_kampanii_detale').val(id)
+          $("form[name='form_id_kampanii_detale']").submit();
+          });
+        });
+      $(document).ready(function() {
+        $('.generuj').click(function() {
+          const id = $(this).attr('id');
+          $('#form_id_kampanii_generuj').val(id)
+          $("form[name='form_id_kampanii_generuj']").submit();
           });
         });
     </script>
