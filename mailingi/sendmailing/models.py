@@ -33,7 +33,7 @@ class KampaniaRedlink(models.Model):
     hard_bounces_fr = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.nazwa_kampanii
+        return f'{self.nazwa_kampanii} -- {self.kiedy_wyslany}'
 
 
 class Handlowiec (models.Model):
@@ -48,4 +48,4 @@ class Handlowiec (models.Model):
     hard_bounces = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.nazwa_kampanii
+        return f'{self.nazwa_kampanii} -- {self.imie_nazwisko} -- {self.jezyk}'
