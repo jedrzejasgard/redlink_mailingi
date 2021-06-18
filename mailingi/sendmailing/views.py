@@ -17,7 +17,7 @@ usr = config.get('redlink', 'redlink_API_user')
 passw = config.get('redlink', 'redlink_API_pass')
 
 
-def wyslijmailingReg():
+def wyslijmailingReg(request):
     return render(request, 'wyslijmailing.html')
 
 def wyslijmailingVip(request):
