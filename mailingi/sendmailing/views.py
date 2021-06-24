@@ -20,6 +20,7 @@ passw = config.get('redlink', 'redlink_API_pass')
 def wyslijmailingReg(request):
     return render(request, 'wyslijmailing.html')
 
+
 def wyslijmailingVip(request):
     lista_grup_redlink_handlowcy = show_all_grups()
     listymailingoweVIP = []
@@ -46,6 +47,7 @@ def blad_nazwy(request):
 def zestawienie_kampanii(request):
     kampanie_model = KampaniaRedlink.objects.all().values()
     return render(request, 'zestawienie_kampanii.html', {'kampanie': kampanie_model})
+
 
 # pobieranie informacji z API REDLINK szczegółowych o każdej grupie mailingowej danego handlowca
 def szczegoly_kampanii_redlink(id_kampanii, data_wyslania):
@@ -114,8 +116,12 @@ def szczegoly_kampanii_redlink(id_kampanii, data_wyslania):
         print(f'Otwarte: {otwarte_maile}')
         dostarczone_wiadomosci = int(r_json_groupcount['Data']) - int(bounces)
         print(f'otwarta: {dostarczone_wiadomosci}, BO {bounces}' )
-        ctr = round(clicks*100/dostarczone_wiadomosci, 2)
-        open_rate = round(otwarte_maile*100/dostarczone_wiadomosci, 2)
+        try:
+            ctr = round(clicks*100/dostarczone_wiadomosci, 2)
+            open_rate = round(otwarte_maile*100/dostarczone_wiadomosci, 2)
+        except ZeroDivisionError:
+           ctr = 0
+           open_rate = 0
         dane = [ctr, open_rate, dostarczone_wiadomosci, un_sub, clicks, dostarczone_wiadomosci, otwarte_maile, bounces]
     except:
         dane = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
@@ -137,6 +143,7 @@ def detale_kampanii(request):
             data_sprawdzenia[-1] = '0' + data_sprawdzenia[-1]
         data_sprawdzenia = '-'.join(data_sprawdzenia)
         dzisiaj = str(datetime.date.today())
+        print(f'Data wyslania {data_wyslania}, data sprawdzenia: {data_sprawdzenia}, dzisiaj {dzisiaj}')
         if data_sprawdzenia > dzisiaj:
             print('sprawdzam dane')
 
@@ -177,14 +184,19 @@ def detale_kampanii(request):
                 elif handlowiec['jezyk'] == 'fr':
                     wyniki_handlowcy_fr[handlowiec['imie_nazwisko']] = (id_redlink, szczegoly_kampanii_redlink(id_redlink, data_wyslania))
             for handlowiec in wyniki_handlowcy_pl:
+                print(wyniki_handlowcy_pl[handlowiec])
                 handlowiec = wyniki_handlowcy_pl[handlowiec][1]
                 un_sub_pl += int(handlowiec[3])
                 clicks_pl += int(handlowiec[4])
                 dostarczone_wiadomosci_pl += int(handlowiec[5])
                 opens_pl += int(handlowiec[6])
                 hb_pl += int(handlowiec[7])
-            ctr_pl = round(clicks_pl * 100 / dostarczone_wiadomosci_pl, 2)
-            open_rate_pl = round(opens_pl * 100 / dostarczone_wiadomosci_pl, 2)
+            try:
+                ctr_pl = round(clicks_pl * 100 / dostarczone_wiadomosci_pl, 2)
+                open_rate_pl = round(opens_pl * 100 / dostarczone_wiadomosci_pl, 2)
+            except ZeroDivisionError:
+                ctr_pl = 0
+                open_rate_pl = 0
             for handlowiec in wyniki_handlowcy_en:
                 handlowiec = wyniki_handlowcy_en[handlowiec][1]
                 un_sub_en += int(handlowiec[3])
@@ -192,8 +204,12 @@ def detale_kampanii(request):
                 dostarczone_wiadomosci_en += int(handlowiec[5])
                 opens_en += int(handlowiec[6])
                 hb_en += int(handlowiec[7])
-            ctr_en = round(clicks_en * 100 / dostarczone_wiadomosci_en, 2)
-            open_rate_en = round(opens_en * 100 / dostarczone_wiadomosci_en, 2)
+            try:
+                ctr_en = round(clicks_en * 100 / dostarczone_wiadomosci_en, 2)
+                open_rate_en = round(opens_en * 100 / dostarczone_wiadomosci_en, 2)
+            except ZeroDivisionError:
+                ctr_en = 0
+                open_rate_en = 0
             for handlowiec in wyniki_handlowcy_de:
                 handlowiec = wyniki_handlowcy_de[handlowiec][1]
                 un_sub_de += int(handlowiec[3])
@@ -201,8 +217,12 @@ def detale_kampanii(request):
                 dostarczone_wiadomosci_de += int(handlowiec[5])
                 opens_de += int(handlowiec[6])
                 hb_de += int(handlowiec[7])
-            ctr_de = round(clicks_pl * 100 / dostarczone_wiadomosci_de, 2)
-            open_rate_de = round(opens_de * 100 / dostarczone_wiadomosci_de, 2)
+            try:
+                ctr_de = round(clicks_pl * 100 / dostarczone_wiadomosci_de, 2)
+                open_rate_de = round(opens_de * 100 / dostarczone_wiadomosci_de, 2)
+            except ZeroDivisionError:
+                ctr_de = 0
+                open_rate_de = 0
             for handlowiec in wyniki_handlowcy_fr:
                 handlowiec = wyniki_handlowcy_fr[handlowiec][1]
                 un_sub_fr += handlowiec[3]
@@ -210,8 +230,12 @@ def detale_kampanii(request):
                 dostarczone_wiadomosci_fr += handlowiec[5]
                 opens_fr += handlowiec[6]
                 hb_fr += handlowiec[7]
-            ctr_fr = round(clicks_fr * 100 / dostarczone_wiadomosci_fr, 2)
-            open_rate_fr = round(opens_fr * 100 / dostarczone_wiadomosci_fr, 2)
+            try:
+                ctr_fr = round(clicks_fr * 100 / dostarczone_wiadomosci_fr, 2)
+                open_rate_fr = round(opens_fr * 100 / dostarczone_wiadomosci_fr, 2)
+            except ZeroDivisionError:
+                ctr_fr = 0
+                open_rate_fr = 0
             kampania_model = KampaniaRedlink.objects.get(id=str(id_kampanii))
             kampania_model.ctr_pl = ctr_pl
             kampania_model.ctr_en = ctr_en
@@ -1319,9 +1343,3 @@ def wyslij_mailing_vip(request):
                                       imie_nazwisko=imie_nazwisko_handlowca)
     return redirect('http://127.0.0.1:8000/')
 
-
-def unsubscribe(request):
-    return render(request, 'unsubscribe.html')
-
-def stats_unsubscribe(request):
-    return render(request, 'stats_unsubscribe.html')

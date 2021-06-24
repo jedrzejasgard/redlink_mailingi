@@ -23,20 +23,28 @@
       <p>Przez pierwszych kilka godzin od wysyłki danych nie ma w API dlatego wyświetlane są wartości 'blad'</p>
         {% endfor%}
       {% for key,values in handlowcy_pl.items %}
-        <a class="btn btn-primary btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{values.0}} role="button"target="_blank">{{key}}
-              <p>CTR: {{values.1.0}}% OR: {{values.1.1}}% Dostarczone: {{values.1.2}} Wypisali się: {{values.1.3}} HB: {{values.1.7}}</p></a>
+        {% if values.1.2 != 0.0 %}
+          <a class="btn btn-primary btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{values.0}} role="button"target="_blank">{{key}}
+              <p>CTR: {{values.1.0}}% OR: {{values.1.1}}% Dostarczone: {{values.1.2}} Wypisali się: {{values.1.3}} HB: {{values.1.6}}</p></a>
+        {% endif %}
       {% endfor %}
       {% for key,values in handlowcy_en.items %}
-        <a class="btn btn-success btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{values.0}} role="button"target="_blank">{{key}}
-              <p>CTR: {{values.1.0}}% OR: {{values.1.1}}% Dostarczone: {{values.1.2}} Wypisali się: {{values.1.3}} HB: {{values.1.7}}</p></a>
+        {% if values.1.2 != 0.0%}
+          <a class="btn btn-success btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{values.0}} role="button"target="_blank">{{key}}
+              <p>CTR: {{values.1.0}}% OR: {{values.1.1}}% Dostarczone: {{values.1.2}} Wypisali się: {{values.1.3}} HB: {{values.1.6}}</p></a>
+        {% endif %}
       {% endfor %}
       {% for key,values in handlowcy_de.items %}
-        <a class="btn btn-warning btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{values.0}} role="button"target="_blank">{{key}}
-              <p>CTR: {{values.1.0}}% OR: {{values.1.1}}% Dostarczone: {{values.1.2}} Wypisali się: {{values.1.3}} HB: {{values.1.7}}</p></a>
+        {% if values.1.2 != 0.0%}
+          <a class="btn btn-warning btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{values.0}} role="button"target="_blank">{{key}}
+              <p>CTR: {{values.1.0}}% OR: {{values.1.1}}% Dostarczone: {{values.1.2}} Wypisali się: {{values.1.3}} HB: {{values.1.6}}</p></a>
+        {% endif %}
       {% endfor %}
       {% for key,values in handlowcy_fr.items %}
-        <a class="btn btn-info btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{values.0}} role="button"target="_blank">{{key}}
-              <p>CTR: {{values.1.0}}% OR: {{values.1.1}}% Dostarczone: {{values.1.2}} Wypisali się: {{values.1.3}} HB: {{values.1.7}}</p></a>
+        {% if values.1.2 != 0.0%}
+          <a class="btn btn-info btn-lg btn-block" href=https://redlink.pl/appNew/panel/Mail/RaportApi.aspx?id={{values.0}} role="button"target="_blank">{{key}}
+              <p>CTR: {{values.1.0}}% OR: {{values.1.1}}% Dostarczone: {{values.1.2}} Wypisali się: {{values.1.3}} HB: {{values.1.6}}</p></a>
+        {% endif %}
       {% endfor %}
     <br>
     <div class="form-row">
