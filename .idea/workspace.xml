@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf85baeb-78c8-41ae-849c-0ce8772663fe" name="Default Changelist" comment="Add ogolne dane o kampanii">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/detale_kampanii.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/detale_kampanii.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/landing.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/wyslijmailingVip.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/wyslijmailingVip.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +97,12 @@
       <workItem from="1624003974708" duration="7940000" />
       <workItem from="1624255532166" duration="5973000" />
       <workItem from="1624371504118" duration="3863000" />
-      <workItem from="1624532345816" duration="390000" />
+      <workItem from="1624532345816" duration="2501000" />
+      <workItem from="1624618878566" duration="6255000" />
+      <workItem from="1624960850860" duration="388000" />
+      <workItem from="1625041363177" duration="593000" />
+      <workItem from="1625052851383" duration="1985000" />
+      <workItem from="1625133282869" duration="1709000" />
     </task>
     <task id="LOCAL-00001" summary="Add szczegoly kompani 1">
       <created>1615197926146</created>

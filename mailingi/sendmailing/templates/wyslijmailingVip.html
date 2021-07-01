@@ -38,102 +38,75 @@
 </head>
 <body>
 <div class="container">
-    <div class="form-row">
+    <h1>Dodaj nowy mailing wysłany przez strone Redlink</h1>
+        <div class="row align-items-center">
+        <form id='mailingForm' action = '#'>
+          <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="nazwa_mailingu"><h2>Nazwa kampanii</h2></label>
-              <input type="tekst" class="form-control" id="nazwa_mailingu" name="nazwa_mailingu" value = '' required >
+              <label for="nazwa_mailingu">Nazwa kampanii</label>
+              <input type="tekst" class="form-control" id="nazwa_mailingu"name="nazwa_mailingu" value = {{dane.nazwa_mailingu}} >
             </div>
           </div>
 
-    <hr>
-    <h3>Treść maila</h3>
-    <table cellspacing="0" cellpadding="0" align="center">
-    <tbody>
-    <tr>
-
-    </tr>
-
-        <div style="padding: 0px 100px 0px 100px;">
-
-            <p>Drogi kliencie,</p>
-            <p>Gratuluję, trafiłeś do wąskiej grupie <strong>naszych najlepszych klientów</strong>. Bardzo się cieszymy, że nasza współpraca układa się tak dobrze, dlatego chcielibyśmy Cię wyróżnić i uhonorować. </p>
-            <p>Mam przyjemność poinformować Cię, że od dzisiaj<strong> będziemy Ci z wyprzedzeniem prezentować</strong> nowości, które co miesiąc wprowadzamy do naszej oferty w ramach serii Fantastic5. </p>
-            <p>Oto i on. </p>
-            <p>Nasz najnowszy film z cyklu Fantastic5 prezentujący zestaw produktów, których oficjalna premiera nastąpi dopiero za tydzień! </p>
-            <ul id='myTab' class="nav nav-tabs">
-                <li class="nav-item">
-                    <a href="#tab-PL" class="nav-link active" data-toggle="tab">PL</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#tab-EN" class="nav-link" data-toggle="tab">EN</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#tab-DE" class="nav-link" data-toggle="tab">DE</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#tab-FR" class="nav-link" data-toggle="tab">FR</a>
-                </li>
-            </ul>
-            <div class="tab-content">
-                    <div class="tab-pane fade show active" id="tab-PL">
-                        PL
-                        <p>Temat:<input id="PL-temat" type="text"></p>
-                        <p> <strong>Zobacz go już dzisiaj klikając w ten <input type="text" id="PL-yt"> </strong></p>
-                        <p>Prezentację przedstawionych produktów w formie pdf możesz przejrzeć klikając <input type="text" id="PL-prezentacja"></p>
-                        <p>Zaprezentowane powyżej produkty zostaną  dodane do naszej oferty <input type="text" id="PL-termin">.
-                    </div>
-                    <div class="tab-pane fade" id="tab-EN">
-                        EN
-                        <p>Temat:<input id="EN-temat" type="text"></p>
-
-                        <p> <strong>Zobacz go już dzisiaj klikając w ten <input type="text" id="EN-yt"> </strong></p>
-                        <p>Prezentację przedstawionych produktów w formie pdf możesz przejrzeć klikając <input type="text" id="EN-prezentacja"></p>
-                        <p>Zaprezentowane powyżej produkty zostaną  dodane do naszej oferty <input type="text" id="EN-termin">.
-                    </div>
-                    <div class="tab-pane fade" id="tab-DE">
-                        DE
-                        <p>Temat:<input id="DE-temat" type="text"></p>
-
-                        <p> <strong>Zobacz go już dzisiaj klikając w ten <input type="text" id="DE-yt"> </strong></p>
-                        <p>Prezentację przedstawionych produktów w formie pdf możesz przejrzeć klikając <input type="text" id="DE-prezentacja"></p>
-                        <p>Zaprezentowane powyżej produkty zostaną  dodane do naszej oferty <input type="text" id="DE-termin">.
-                    </div>
-                    <div class="tab-pane fade" id="tab-FR">
-                        FR
-                        <p>Temat:<input id="FR-temat" type="text"></p>
-
-                        <p> <strong>Zobacz go już dzisiaj klikając w ten <input type="text" id="FR-yt"> </strong></p>
-                        <p>Prezentację przedstawionych produktów w formie pdf możesz przejrzeć klikając <input type="text" id="FR-prezentacja"></p>
-                        <p>Zaprezentowane powyżej produkty zostaną  dodane do naszej oferty <input type="text" id="FR-termin">.
-                    </div>
+          <hr>
+          <h5>Jeśli nie wpiszesz tematu mailingu dany język nie zostanie wysłany</h5>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="temat_PL">Temat PL</label>
+              <input type="tekst" class="form-control" id="temat_PL"name="temat_PL"value = {{dane.temat_PL}}>
             </div>
-            <p>Najczęściej zadawane pytania dotyczące Fantastic5 zgromadziliśmy <a href="https://asgard.gifts/kategoria/najczesciej-zadawane-pytania_263_1.html"> TUTAJ </a></p>
-            <p>Dotychczas wprowadzone serie produktów z cyklu Fantastic5 możesz obejrzeć <a href="https://asgard.gifts/kategoria/nowosci-fantastic-5_262_1.html"> TUTAJ </a></p>
-
-
-            <p>Ale to nie wszystko!</p>
-            <p> <strong> Zapraszam Cię również na indywidualną prezentację produktów </strong> przeprowadzoną przeze mnie wyłącznie dla Ciebie. Jeśli masz ochotę, daj mi znać, a ustalimy dogodny dla Ciebie termin.</p>
-            <p>Zaprezentowane powyżej produkty zostaną  dodane do naszej oferty (uzupełniony termin) . Tego dnia pojawią się w naszym sklepie internetowym. </p>
-            <p>W dniu ich oficjalnej premiery otrzymasz ode mnie również dodatkowy e-mail ze szczegółami nowej oferty, opcją integracji ze swoją ofertą oraz materiałami, które możesz przesłać swoim klientom.</p>
-            <p>Pozdrawiam,</p>
-
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="temat_EN">Temat EN</label>
+              <input type="tekst" class="form-control" id="temat_EN"name="temat_EN"value = {{dane.temat_EN}}>
             </div>
-    <hr>
-    </tbody>
-    </table>
-    <div class="form-group col-md-12 srodek_button">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="temat_DE">Temat DE</label>
+              <input type="tekst" class="form-control" id="temat_DE"name="temat_DE"value = {{dane.temat_DE}}>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="temat_FR">Temat FR</label>
+              <input type="tekst" class="form-control" id="temat_FR"name="temat_FR"value = {{dane.temat_FR}}>
+            </div>
+          </div>
+          <hr>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="adres_strony_mailingu">Link do zawartości mailingu(zawierający  '/redlink_')</label>
+              <input type="tekst" class="form-control" id="adres_strony_mailingu"name="adres_strony_mailingu"value = '{{dane.adres_strony_mailingu}}'>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12 srodek_button">
               <button type="button" class="btn btn-warning" data-toggle="modal" data-target='#popupWysylkaTest'>Wyślij Test</button>
               <p>Testowy mailingu jest  wysyłany natychmiast bez ustrawiania daty wysyłki</p>
             </div>
-    <hr>
-    <div class="form-row">
-        <div class="form-group col-md-3"></div>
-        <div class="form-group col-md-6">
-          <label for="data_wysylki_input">Data wysyłki (date / godzina):</label>
-          <input type="datetime-local" id="data_wysylki_input" name="data_wysylki_input">
-        </div>
-        <div class="form-group col-md-3"></div>
-    </div>
+          </div>
+          <hr>
+          <div class="form-row">
+            <div class="form-group col-md-3"></div>
+            <div class="form-group col-md-6">
+              <label for="data_wysylki_input">Data wysyłki (date / godzina):</label>
+              <input type="datetime-local" id="data_wysylki_input" name="data_wysylki_input">
+            </div>
+            <div class="form-group col-md-3"></div>
+          </div>
+          <hr>
+          <div class="form-row">
+            <div class="form-group col-md-12 srodek_button">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target='#popupWysylka'>Wyślij mailing</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+
     <h1>Listy mailingowe VIP</h1>
         <div class="row">
             <button class="col-3" id="tylko-PL">PL</button>
@@ -257,30 +230,16 @@
       });
 
       $('#submitTest').click(function(){
-        let dictMailingTest = {}
-        dictMailing['nazwa_mailingu'] = $('#nazwa_mailingu').val()
-        dictMailing['PL-temat'] = $('#PL-temat').val()
-        dictMailing['PL-termin'] = $('#PL-termin').val()
-        dictMailing['PL-yt'] = $('#PL-yt').val()
-        dictMailing['PL-prezentacja'] = $('#PL-prezentacja').val()
-
-        dictMailing['EN-temat'] = $('#EN-temat').val()
-        dictMailing['EN-termin'] = $('#EN-termin').val()
-        dictMailing['EN-yt'] = $('#EN-yt').val()
-        dictMailing['EN-prezentacja'] = $('#EN-prezentacja').val()
-
-        dictMailing['DE-temat'] = $('#DE-temat').val()
-        dictMailing['DE-termin'] = $('#DE-termin').val()
-        dictMailing['DE-yt'] = $('#DE-yt').val()
-        dictMailing['DE-prezentacja'] = $('#DE-prezentacja').val()
-
-        dictMailing['FR-temat'] = $('#FR-temat').val()
-        dictMailing['FR-termin'] = $('#FR-termin').val()
-        dictMailing['FR-yt'] = $('#FR-yt').val()
-        dictMailing['FR-prezentacja'] = $('#FR-prezentacja').val()
+        var dictMailingTest = {}
+        dictMailingTest['nazwa_mailingu'] = $('#nazwa_mailingu').val()
+        dictMailingTest['temat_PL'] = $('#temat_PL').val()
+        dictMailingTest['temat_EN'] = $('#temat_EN').val()
+        dictMailingTest['temat_DE'] = $('#temat_DE').val()
+        dictMailingTest['temat_FR'] = $('#temat_FR').val()
+        dictMailingTest['adres_strony_mailingu'] = $('#adres_strony_mailingu').val()
         $('#popupWysylkaTest').modal('hide');
 
-        let JsonDict = JSON.stringify(dictMailingTest);
+        var JsonDict = JSON.stringify(dictMailingTest);
         if(JsonDict.length > 2){
           $('#formMailingTest').val(JsonDict);
           $("form[name='formMailingTest']").submit();
@@ -295,27 +254,15 @@
         let wysylkaDo = []
         $('#popupWysylka').modal('hide');
         let checkboxes = document.getElementsByName('checkListaHandlowca');
+        $('#wyslijMailing').click(function(){
+     /* when the submit button in the modal is clicked, submit the form */
         dictMailing['nazwa_mailingu'] = $('#nazwa_mailingu').val()
-        dictMailing['PL-temat'] = $('#PL-temat').val()
-        dictMailing['PL-termin'] = $('#PL-termin').val()
-        dictMailing['PL-yt'] = $('#PL-yt').val()
-        dictMailing['PL-prezentacja'] = $('#PL-prezentacja').val()
-
-        dictMailing['EN-temat'] = $('#EN-temat').val()
-        dictMailing['EN-termin'] = $('#EN-termin').val()
-        dictMailing['EN-yt'] = $('#EN-yt').val()
-        dictMailing['EN-prezentacja'] = $('#EN-prezentacja').val()
-
-        dictMailing['DE-temat'] = $('#DE-temat').val()
-        dictMailing['DE-termin'] = $('#DE-termin').val()
-        dictMailing['DE-yt'] = $('#DE-yt').val()
-        dictMailing['DE-prezentacja'] = $('#DE-prezentacja').val()
-
-        dictMailing['FR-temat'] = $('#FR-temat').val()
-        dictMailing['FR-termin'] = $('#FR-termin').val()
-        dictMailing['FR-yt'] = $('#FR-yt').val()
-        dictMailing['FR-prezentacja'] = $('#FR-prezentacja').val()
-        let data_wyslania = $('#data_wysylki_input').val().replace('T','-').replace(':','-')+('-00')
+        dictMailing['temat_PL'] = $('#temat_PL').val()
+        dictMailing['temat_EN'] = $('#temat_EN').val()
+        dictMailing['temat_DE'] = $('#temat_DE').val()
+        dictMailing['temat_FR'] = $('#temat_FR').val()
+        dictMailing['adres_strony_mailingu'] = $('#adres_strony_mailingu').val()
+        var data_wyslania = $('#data_wysylki_input').val().replace('T','-').replace(':','-')+('-00')
         dictMailing['data_wysylki_input'] = data_wyslania
           for (let i = 0, n = checkboxes.length; i < n; i++) {
               if (checkboxes[i].checked){
@@ -332,7 +279,7 @@
         }else{
           alert('Problem')
         }
-      });
+      })};
     </script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
