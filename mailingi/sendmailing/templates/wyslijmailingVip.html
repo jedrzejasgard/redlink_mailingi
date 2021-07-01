@@ -39,7 +39,6 @@
 <body>
 <div class="container">
     <h1>Dodaj nowy mailing wysłany przez strone Redlink</h1>
-        <div class="row align-items-center">
         <form id='mailingForm' action = '#'>
           <div class="form-row">
             <div class="form-group col-md-12">
@@ -49,7 +48,6 @@
           </div>
 
           <hr>
-          <h5>Jeśli nie wpiszesz tematu mailingu dany język nie zostanie wysłany</h5>
           <div class="form-row">
             <div class="form-group col-md-12">
               <label for="temat_PL">Temat PL</label>
@@ -97,13 +95,8 @@
             <div class="form-group col-md-3"></div>
           </div>
           <hr>
-          <div class="form-row">
-            <div class="form-group col-md-12 srodek_button">
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target='#popupWysylka'>Wyślij mailing</button>
-            </div>
-          </div>
+
         </form>
-      </div>
 
 
 
@@ -131,7 +124,6 @@
         </div>
         {%endfor%}
     </form>
-    <p></p>
     <div class="modal fade" id="popupWysylkaTest" tabindex="-1" role="dialog" aria-labelledby="popupWysylkaTestTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -174,7 +166,7 @@
           </div>
         </div>
       </div>
-    <form name='formMailingTest' method = 'POST' action="/wyslij_test/">
+    <form name='formMailingTest' method = 'POST' action="/wyslij_test_vip/">
         {% csrf_token %}
         <input type="hidden" name = 'formMailingTest' id="formMailingTest" value>
       </form>
@@ -279,7 +271,7 @@
         }else{
           alert('Problem')
         }
-      })};
+      })});
     </script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

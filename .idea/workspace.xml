@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cf85baeb-78c8-41ae-849c-0ce8772663fe" name="Default Changelist" comment="Add ogolne dane o kampanii">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailingi/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/wyslijmailingVip.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/wyslijmailingVip.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +101,7 @@
       <workItem from="1624960850860" duration="388000" />
       <workItem from="1625041363177" duration="593000" />
       <workItem from="1625052851383" duration="1985000" />
-      <workItem from="1625133282869" duration="1709000" />
+      <workItem from="1625133282869" duration="2854000" />
     </task>
     <task id="LOCAL-00001" summary="Add szczegoly kompani 1">
       <created>1615197926146</created>
