@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cf85baeb-78c8-41ae-849c-0ce8772663fe" name="Default Changelist" comment="Add ogolne dane o kampanii">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/landing.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/wyslijmailingVip.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/wyslijmailingVip.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +104,11 @@
       <workItem from="1624960850860" duration="388000" />
       <workItem from="1625041363177" duration="593000" />
       <workItem from="1625052851383" duration="1985000" />
-      <workItem from="1625133282869" duration="2854000" />
+      <workItem from="1625133282869" duration="9430000" />
+      <workItem from="1625201963325" duration="11574000" />
+      <workItem from="1625487492148" duration="87000" />
+      <workItem from="1625562575602" duration="795000" />
+      <workItem from="1625722481476" duration="6507000" />
     </task>
     <task id="LOCAL-00001" summary="Add szczegoly kompani 1">
       <created>1615197926146</created>
@@ -139,5 +146,16 @@
     <MESSAGE value="Add szczegoly kompani 1" />
     <MESSAGE value="Add ogolne dane o kampanii" />
     <option name="LAST_COMMIT_MESSAGE" value="Add ogolne dane o kampanii" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mailingi/sendmailing/views.py</url>
+          <line>889</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -38,7 +38,8 @@
 </head>
 <body>
 <div class="container">
-    <h1>Dodaj nowy mailing wysłany przez strone Redlink</h1>
+    <h1>VIP</h1>
+    <h2>Dodaj nowy mailing wysłany przez strone Redlink</h2>
         <form id='mailingForm' action = '#'>
           <div class="form-row">
             <div class="form-group col-md-12">
@@ -75,7 +76,7 @@
           <hr>
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="adres_strony_mailingu">Link do zawartości mailingu(zawierający  '/redlink_')</label>
+              <label for="adres_strony_mailingu">Link do zawartości mailingu(zawierający  '/content_')</label>
               <input type="tekst" class="form-control" id="adres_strony_mailingu"name="adres_strony_mailingu"value = '{{dane.adres_strony_mailingu}}'>
             </div>
           </div>
@@ -246,7 +247,6 @@
         let wysylkaDo = []
         $('#popupWysylka').modal('hide');
         let checkboxes = document.getElementsByName('checkListaHandlowca');
-        $('#wyslijMailing').click(function(){
      /* when the submit button in the modal is clicked, submit the form */
         dictMailing['nazwa_mailingu'] = $('#nazwa_mailingu').val()
         dictMailing['temat_PL'] = $('#temat_PL').val()
@@ -271,7 +271,7 @@
         }else{
           alert('Problem')
         }
-      })});
+      });
     </script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
