@@ -15,6 +15,9 @@ config.read(configFilePath)
 
 usr = config.get('redlink', 'redlink_API_user')
 passw = config.get('redlink', 'redlink_API_pass')
+id_test_redlink = '66F3AE43-6DDC-475E-8DB6-6775EBF9030D'
+id_asgardian_redlink = '28514C29-8294-41F6-82EB-0E1335B8C5B1'
+id_handlowcy_redlink = 'FAE0FBDB-67E7-47A4-BA0E-7D4C3E650639'
 
 
 def wyslijmailingReg(request):
@@ -160,7 +163,7 @@ def detale_kampanii(request):
         print(f'Data wyslania {data_wyslania}, data sprawdzenia: {data_sprawdzenia}, dzisiaj {dzisiaj}')
         print('sprawdzam dane')
 
-        #data_wyslania = '2021-06-30'wysyłka o
+        #data_wyslania = '2021-06-30'
 
         wyniki_handlowcy_pl = {}
         wyniki_handlowcy_en = {}
@@ -358,7 +361,7 @@ def wyslij_mailing_redlink(nazwa_mailingu, temat, imie_nazwisko, mail_wysylki, c
     # print(data_wyslania)
     response = mail.service.CreateMailCampaign(strUserName=usr, strPassword=passw, data=data)
     r_json = zeep.helpers.serialize_object(response)
-    print(r_json)
+    # print(r_json)
     return str(r_json['Data'])
 
 
@@ -367,6 +370,28 @@ def show_all_grups():
     response = client.service.GetAllGroups(strUserName=usr, strPassword=passw)
     r_json = zeep.helpers.serialize_object(response)
     return r_json['DataArray']['GroupData']
+
+class GrupyRedlink():
+    lista_jezykow = ['PL', 'EN', 'DE', 'FR']
+
+    def __init__(self):
+        client = zeep.Client('https://redlink.pl/ws/v1/Soap/Contacts/Groups.asmx?WSDL')
+        response = client.service.GetAllGroups(strUserName=usr, strPassword=passw)
+        r_json = zeep.helpers.serialize_object(response)
+        return r_json['DataArray']['GroupData']
+
+    def regular(self,jezyk):
+        for itemRedlink in self:
+            grup_id = itemRedlink['GroupId']
+            if itemRedlink['GroupName'].endswith(f'{jezyk}') and not itemRedlink['GroupName'].startswith('VIP'):
+                imie = re.findall(r'(^[A-Z][a-z]*)', itemRedlink['GroupName'].split('_')[0])[0]
+                nazwisko = re.findall(r'([A-Z][a-z]*$)', itemRedlink['GroupName'].split('_')[0])[0]
+                mail_wysylki = f'{imie[0].lower()}.{nazwisko.lower()}@asgard.gifts'
+                imie_nazwisko_handlowca = f'{imie} {nazwisko}'
+                print(imie_nazwisko_handlowca)
+
+    def vip(self,jezyk):
+
 
 
 def wyslij_mailing(request):
@@ -390,7 +415,7 @@ def wyslij_mailing(request):
             adres_strony_mailingu = dane_mailing['adres_strony_mailingu']
             data_wysylki_input = dane_mailing['data_wysylki_input'].replace(':', '-')
             year, month, day, hour, minute, second = map(int, data_wysylki_input.split('-'))
-            data_wyslania = datetime(year, month, day, hour, minute, second)
+            data_wyslania = datetime.datetime(year, month, day, hour, minute, second)
 
             # data_wyslania_przypomnienie = datetime.datetime(year, month, day+2, hour, minute, second)
             # print(data_wyslania_przypomnienie)
@@ -414,7 +439,7 @@ def wyslij_mailing(request):
                                            un_sub_pl=0, un_sub_en=0, un_sub_de=0, un_sub_fr=0)
 
             lista_grup_redlink_handlowcy = show_all_grups()
-            print(lista_grup_redlink_handlowcy)
+            # print(lista_grup_redlink_handlowcy)
             for jezyk in lista_jezykow:
                 if len(tematy_mailingu[jezyk]) > 1:
                     temat = tematy_mailingu[jezyk]
@@ -422,7 +447,6 @@ def wyslij_mailing(request):
                     content_mailingu = f'{adres_strony_mailingu}_{jezyk.lower()}.html'
                     for itemRedlink in lista_grup_redlink_handlowcy:
                         grup_id = itemRedlink['GroupId']
-
                         if itemRedlink['GroupName'].endswith(f'{jezyk}') and not itemRedlink['GroupName'].startswith(
                                 'VIP'):
                             # itemRedlink = itemRedlink['GroupName'].replace('VIP_','')
@@ -431,16 +455,11 @@ def wyslij_mailing(request):
                             mail_wysylki = f'{imie[0].lower()}.{nazwisko.lower()}@asgard.gifts'
                             imie_nazwisko_handlowca = f'{imie} {nazwisko}'
                             print(imie_nazwisko_handlowca)
-                            print(grup_id)
-                            print(nazwa_mailingu, temat, imie_nazwisko_handlowca,
-                                                                 mail_wysylki,
-                                                                 content_mailingu, data_wyslania, grup_id)
                             id_kampanii = wyslij_mailing_redlink(nazwa_mailingu, temat, imie_nazwisko_handlowca,
                                                                  mail_wysylki,
                                                                  content_mailingu, data_wyslania, grup_id)
-                        #    # id_kampanii = '2B872BAF-B1DC-4562-A3E7-52ADAA3D401D'
-                            print(id_kampanii)
-                        #    # utworzenie rekordu z danymi handlowca powiązanego z kompanią
+                            # id_kampanii = '2B872BAF-B1DC-4562-A3E7-52ADAA3D401D'
+                            # utworzenie rekordu z danymi handlowca powiązanego z kompanią
                             Handlowiec.objects.create(redlink_id=id_kampanii, jezyk=jezyk.lower(), ctr=0, open_rate=0,
                                                       dostarczone_wiadomosci=0, un_sub=0,
                                                       imie_nazwisko=imie_nazwisko_handlowca,
@@ -509,7 +528,7 @@ def wyslij_mailing_vip(request):
         tematy_mailingu = {}
         data_wysylki_input = dane_mailing['data_wysylki_input'].replace(':', '-')
         year, month, day, hour, minute, second = map(int, data_wysylki_input.split('-'))
-        data_wyslania = datetime(year, month, day, hour, minute, second)
+        data_wyslania = datetime.datetime(year, month, day, hour, minute, second)
 
         try:
             print(KampaniaRedlink.objects.filter(nazwa_kampanii=nazwa_mailingu).values())

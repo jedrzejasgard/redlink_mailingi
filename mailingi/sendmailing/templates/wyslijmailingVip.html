@@ -75,12 +75,6 @@
           </div>
           <hr>
           <div class="form-row">
-            <div class="form-group col-md-12">
-              <label for="adres_strony_mailingu">Link do zawartości mailingu(zawierający  '/content_')</label>
-              <input type="tekst" class="form-control" id="adres_strony_mailingu"name="adres_strony_mailingu"value = '{{dane.adres_strony_mailingu}}'>
-            </div>
-          </div>
-          <div class="form-row">
             <div class="form-group col-md-12 srodek_button">
               <button type="button" class="btn btn-warning" data-toggle="modal" data-target='#popupWysylkaTest'>Wyślij Test</button>
               <p>Testowy mailingu jest  wysyłany natychmiast bez ustrawiania daty wysyłki</p>
@@ -229,7 +223,6 @@
         dictMailingTest['temat_EN'] = $('#temat_EN').val()
         dictMailingTest['temat_DE'] = $('#temat_DE').val()
         dictMailingTest['temat_FR'] = $('#temat_FR').val()
-        dictMailingTest['adres_strony_mailingu'] = $('#adres_strony_mailingu').val()
         $('#popupWysylkaTest').modal('hide');
 
         var JsonDict = JSON.stringify(dictMailingTest);
@@ -253,7 +246,6 @@
         dictMailing['temat_EN'] = $('#temat_EN').val()
         dictMailing['temat_DE'] = $('#temat_DE').val()
         dictMailing['temat_FR'] = $('#temat_FR').val()
-        dictMailing['adres_strony_mailingu'] = $('#adres_strony_mailingu').val()
         var data_wyslania = $('#data_wysylki_input').val().replace('T','-').replace(':','-')+('-00')
         dictMailing['data_wysylki_input'] = data_wyslania
           for (let i = 0, n = checkboxes.length; i < n; i++) {
