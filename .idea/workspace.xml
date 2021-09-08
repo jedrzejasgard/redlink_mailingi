@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cf85baeb-78c8-41ae-849c-0ce8772663fe" name="Default Changelist" comment="Add ogolne dane o kampanii">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailingi/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailingi/sendmailing/templates/wyslijmailing.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailingi/sendmailing/templates/wyslijmailing.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,7 @@
       <workItem from="1630410590730" duration="1386000" />
       <workItem from="1630572693524" duration="567000" />
       <workItem from="1631010281106" duration="133000" />
-      <workItem from="1631102111794" duration="477000" />
+      <workItem from="1631102111794" duration="2261000" />
     </task>
     <task id="LOCAL-00001" summary="Add szczegoly kompani 1">
       <created>1615197926146</created>

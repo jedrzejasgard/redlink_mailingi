@@ -151,8 +151,16 @@
 
     <!-- Optional JavaScript -->
     <script>
+      let input = document.querySelector('#adres_strony_mailingu')
+      input.addEventListener('change', function () {
+        let str = $('#adres_strony_mailingu').val()
+        let podzielony_adres_strony = str.split('_')
+        if (podzielony_adres_strony.length > 2) {
+          alert('Znak "_" jest dozwolony TYLKO w "redlink_pl", sprawdź nazwe folderu mailingu i ją popraw w razie potrzeby')
+        }
+        });
       $('#submitTest').click(function(){
-        var dictMailingTest = {}
+        let dictMailingTest = {}
         dictMailingTest['nazwa_mailingu'] = $('#nazwa_mailingu').val()
         dictMailingTest['temat_PL'] = $('#temat_PL').val()
         dictMailingTest['temat_EN'] = $('#temat_EN').val()
@@ -161,7 +169,7 @@
         dictMailingTest['adres_strony_mailingu'] = $('#adres_strony_mailingu').val()
         $('#popupWysylkaTest').modal('hide');
 
-        var JsonDict = JSON.stringify(dictMailingTest);
+        let JsonDict = JSON.stringify(dictMailingTest);
         if(JsonDict.length > 2){
           $('#formMailingTest').val(JsonDict);       
           $("form[name='formMailingTest']").submit(); 
@@ -172,14 +180,14 @@
 
       $('#wyslijMailing').click(function(){
      /* when the submit button in the modal is clicked, submit the form */
-        var dictMailing = {}
+        let dictMailing = {}
         dictMailing['nazwa_mailingu'] = $('#nazwa_mailingu').val()
         dictMailing['temat_PL'] = $('#temat_PL').val()
         dictMailing['temat_EN'] = $('#temat_EN').val()
         dictMailing['temat_DE'] = $('#temat_DE').val()
         dictMailing['temat_FR'] = $('#temat_FR').val()
         dictMailing['adres_strony_mailingu'] = $('#adres_strony_mailingu').val()
-        var data_wyslania = $('#data_wysylki_input').val().replace('T','-').replace(':','-')+('-00')
+        let data_wyslania = $('#data_wysylki_input').val().replace('T','-').replace(':','-')+('-00')
         dictMailing['data_wysylki_input'] = data_wyslania
         $('#popupWysylka').modal('hide');
 
