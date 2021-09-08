@@ -395,10 +395,10 @@ def wyslij_mailing(request):
             # data_wyslania_przypomnienie = datetime.datetime(year, month, day+2, hour, minute, second)
             # print(data_wyslania_przypomnienie)
 
-            wyslij_do_asgardian_redlink(dane_mailing['nazwa_mailingu'], tematy_mailingu['PL'], 'Marketing ASGARD',
-                                        'marketing@asgard.gifts', dane_mailing['adres_strony_mailingu'], data_wyslania)
-            wyslij_do_handlowcow_redlink(dane_mailing['nazwa_mailingu'], dane_mailing['temat_PL'], 'Marketing ASGARD',
-                                         'marketing@asgard.gifts', dane_mailing['adres_strony_mailingu'], data_wyslania)
+            #wyslij_do_asgardian_redlink(dane_mailing['nazwa_mailingu'], tematy_mailingu['PL'], 'Marketing ASGARD',
+            #                            'marketing@asgard.gifts', dane_mailing['adres_strony_mailingu'], data_wyslania)
+            #wyslij_do_handlowcow_redlink(dane_mailing['nazwa_mailingu'], dane_mailing['temat_PL'], 'Marketing ASGARD',
+            #                             'marketing@asgard.gifts', dane_mailing['adres_strony_mailingu'], data_wyslania)
 
             KampaniaRedlink.objects.create(nazwa_kampanii=nazwa_mailingu, kiedy_wyslany=data_wyslania,
                                            temat_mailingu_pl=tematy_mailingu['PL'],
